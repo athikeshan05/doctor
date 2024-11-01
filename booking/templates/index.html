@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hospital Appointment System</title>
+    <link rel="stylesheet" href="/static/css/styles.css">
+    
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="logo">
+                <img src="icons/logo.png" alt="Logo">
+                <span>Patient Engagement Platform</span>
+            </div>
+            <ul class="nav-links">
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Book Appointment</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+        </nav>
+        
+        <h1>Our Medical Departments</h1>
+        <p>Select a department to view available doctors</p>
+    </header>
+    
+    <section class="specialty-grid">
+        <!-- Extensive List of Specialties -->
+        <div class="specialty-card" onclick="navigateToDoctors('anesthesiology')">
+            <img src="icons/anesthesiology.png" alt="Anesthesiology">
+            <p>Anesthesiology</p>
+        </div>
+        <div class="specialty-card" onclick="navigateToDoctors('cardiology')">
+            <img src="icons/cardiology.png" alt="Cardiology">
+            <p>Cardiology</p>
+        </div>
+        <div class="specialty-card" onclick="navigateToDoctors('dermatology')">
+            <img src="icons/dermatology.png" alt="Dermatology">
+            <p>Dermatology</p>
+        </div>
+        <div class="specialty-card" onclick="navigateToDoctors('emergency-medicine')">
+            <img src="icons/emergency.png" alt="Emergency Medicine">
+            <p>Emergency Medicine</p>
+        </div>
+        <div class="specialty-card" onclick="navigateToDoctors('endocrinology')">
+            <img src="icons/endocrinology.png" alt="Endocrinology">
+            <p>Endocrinology</p>
+        </div>
+        <div class="specialty-card" onclick="navigateToDoctors('gastroenterology')">
+            <img src="icons/gastroenterology.png" alt="Gastroenterology">
+            <p>Gastroenterology</p>
+        </div>
+        <div class="specialty-card" onclick="navigateToDoctors('gynecology')">
+            <img src="icons/gynecology.png" alt="Gynecology">
+            <p>Gynecology & Obstetrics</p>
+        </div>
+        <div class="specialty-card" onclick="navigateToDoctors('neurology')">
+            <img src="icons/neurology.png" alt="Neurology">
+            <p>Neurology</p>
+        </div>
+        <div class="specialty-card" onclick="navigateToDoctors('oncology')">
+            <img src="icons/oncology.png" alt="Oncology">
+            <p>Oncology</p>
+        </div>
+        <div class="specialty-card" onclick="navigateToDoctors('orthopedics')">
+            <img src="icons/orthopedics.png" alt="Orthopedics">
+            <p>Orthopedics</p>
+        </div>
+        <div class="specialty-card" onclick="navigateToDoctors('pediatrics')">
+            <img src="icons/pediatrics.png" alt="Pediatrics">
+            <p>Pediatrics</p>
+        </div>
+        <div class="specialty-card" onclick="navigateToDoctors('psychiatry')">
+            <img src="icons/psychiatry.png" alt="Psychiatry">
+            <p>Psychiatry</p>
+        </div>
+        <div class="specialty-card" onclick="navigateToDoctors('radiology')">
+            <img src="icons/radiology.png" alt="Radiology">
+            <p>Radiology</p>
+        </div>
+        <div class="specialty-card" onclick="navigateToDoctors('surgery')">
+            <img src="icons/surgery.png" alt="Surgery">
+            <p>General Surgery</p>
+        </div>
+        <div class="specialty-card" onclick="navigateToDoctors('urology')">
+            <img src="icons/urology.png" alt="Urology">
+            <p>Urology</p>
+        </div>
+        <div class="specialty-card" onclick="navigateToDoctors('nephrology')">
+            <img src="icons/nephrology.png" alt="Nephrology">
+            <p>Nephrology</p>
+        </div>
+        <div class="specialty-card" onclick="navigateToDoctors('pulmonology')">
+            <img src="icons/pulmonology.png" alt="Pulmonology">
+            <p>Pulmonology</p>
+        </div>
+        <div class="specialty-card" onclick="navigateToDoctors('rheumatology')">
+            <img src="icons/rheumatology.png" alt="Rheumatology">
+            <p>Rheumatology</p>
+        </div>
+        <div class="specialty-card" onclick="navigateToDoctors('infectious-diseases')">
+            <img src="icons/infectious-diseases.png" alt="Infectious Diseases">
+            <p>Infectious Diseases</p>
+        </div>
+        <div class="specialty-card" onclick="navigateToDoctors('hematology')">
+            <img src="icons/hematology.png" alt="Hematology">
+            <p>Hematology</p>
+        </div>
+        <div class="specialty-card" onclick="navigateToDoctors('immunology')">
+            <img src="icons/immunology.png" alt="Immunology">
+            <p>Immunology</p>
+        </div>
+        <div class="specialty-card" onclick="navigateToDoctors('endodontics')">
+            <img src="icons/endodontics.png" alt="Endodontics">
+            <p>Endodontics</p>
+        </div>
+        <div class="specialty-card" onclick="navigateToDoctors('periodontics')">
+            <img src="icons/periodontics.png" alt="Periodontics">
+            <p>Periodontics</p>
+        </div>
+        <div class="specialty-card" onclick="navigateToDoctors('prosthodontics')">
+            <img src="icons/prosthodontics.png" alt="Prosthodontics">
+            <p>Prosthodontics</p>
+        </div>
+        <div class="specialty-card" onclick="navigateToDoctors('podiatry')">
+            <img src="icons/podiatry.png" alt="Podiatry">
+            <p>Podiatry</p>
+        </div>
+        <div class="specialty-card" onclick="navigateToDoctors('plastic-surgery')">
+            <img src="icons/plastic-surgery.png" alt="Plastic Surgery">
+            <p>Plastic Surgery</p>
+        </div>
+        <div class="specialty-card" onclick="navigateToDoctors('geriatrics')">
+            <img src="icons/geriatrics.png" alt="Geriatrics">
+            <p>Geriatrics</p>
+        </div>
+        <div class="specialty-card" onclick="navigateToDoctors('ophthalmology')">
+            <img src="icons/ophthalmology.png" alt="Ophthalmology">
+            <p>Ophthalmology</p>
+        </div>
+        <div class="specialty-card" onclick="navigateToDoctors('allergy-immunology')">
+            <img src="icons/allergy.png" alt="Allergy & Immunology">
+            <p>Allergy & Immunology</p>
+        </div>
+        <div class="specialty-card" onclick="navigateToDoctors('neonatology')">
+            <img src="icons/neonatology.png" alt="Neonatology">
+            <p>Neonatology</p>
+        </div>
+        <div class="specialty-card" onclick="navigateToDoctors('nuclear-medicine')">
+            <img src="icons/nuclear-medicine.png" alt="Nuclear Medicine">
+            <p>Nuclear Medicine</p>
+        </div>
+        <div class="specialty-card" onclick="navigateToDoctors('occupational-medicine')">
+            <img src="icons/occupational-medicine.png" alt="Occupational Medicine">
+            <p>Occupational Medicine</p>
+        </div>
+        <div class="specialty-card" onclick="navigateToDoctors('pain-medicine')">
+            <img src="icons/pain-medicine.png" alt="Pain Medicine">
+            <p>Pain Medicine</p>
+        </div>
+        <div class="specialty-card" onclick="navigateToDoctors('pathology')">
+            <img src="icons/pathology.png" alt="Pathology">
+            <p>Pathology</p>
+        </div>
+        <div class="specialty-card" onclick="navigateToDoctors('rehabilitation-medicine')">
+            <img src="icons/rehabilitation.png" alt="Rehabilitation Medicine">
+            <p>Rehabilitation Medicine</p>
+        </div>
+        <div class="specialty-card" onclick="navigateToDoctors('vascular-surgery')">
+            <img src="icons/vascular-surgery.png" alt="Vascular Surgery">
+            <p>Vascular Surgery</p>
+        </div>
+        <div class="specialty-card" onclick="navigateToDoctors('thoracic-surgery')">
+            <img src="icons/thoracic-surgery.png" alt="Thoracic Surgery">
+            <p>Thoracic Surgery</p>
+        </div>
+        <div class="specialty-card" onclick="navigateToDoctors('palliative-care')">
+            <img src="icons/palliative-care.png" alt="Palliative Care">
+            <p>Palliative Care</p>
+        </div>
+        <div class="specialty-card" onclick="navigateToDoctors('transplant-surgery')">
+            <img src="icons/transplant-surgery.png" alt="Transplant Surgery">
+            <p>Transplant Surgery</p>
+        </div>
+        <div class="specialty-card" onclick="navigateToDoctors('sports-medicine')">
+            <img src="icons/sports-medicine.png" alt="Sports Medicine">
+            <p>Sports Medicine</p>
+        </div>
+        <div class="specialty-card" onclick="navigateToDoctors('genetics')">
+            <img src="icons/genetics.png" alt="Genetics">
+            <p>Genetics</p>
+        </div>
+        <div class="specialty-card" onclick="navigateToDoctors('cosmetic-medicine')">
+            <img src="icons/cosmetic-medicine.png" alt="Cosmetic Medicine">
+            <p>Cosmetic Medicine</p>
+        </div>
+        
+    </section>
+    <section class="doctor-grid" id="doctor-grid">
+        <!-- Doctor cards will be dynamically added here -->
+    </section>
+    <script>
+        window.onload = function() {
+            const specialty = 'anesthesiology'; // Change this to the respective specialty
+            const doctors = JSON.parse(localStorage.getItem(specialty)) || [];
+            const doctorGrid = document.getElementById('doctor-grid');
+
+            doctors.forEach(doctor => {
+                const doctorCard = document.createElement('div');
+                doctorCard.classList.add('doctor-card');
+                doctorCard.innerHTML = `
+                    <img src="${doctor.imgSrc}" alt="${doctor.name}">
+                    <h3>${doctor.name}</h3>
+                    <p>${doctor.qualifications}</p>
+                    <p>${doctor.position}</p>
+                    <button>Know More</button>
+                `;
+                doctorGrid.appendChild(doctorCard);
+            });
+        };
+    </script>
+
+    <script src="/static/js/script.js"></script>
+</body>
+</html>

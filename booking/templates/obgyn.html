@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Obstetrics and Gynecology - Doctors</title>
+    <link rel="stylesheet" href="/static/css/style.css">
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="logo">
+                <img src="icons/logo.png" alt="Logo">
+                <span>Patient Engagement Platform</span>
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="#">Book Appointment</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+        </nav>
+        
+        <h1>Obstetrics and Gynecology</h1>
+        <p>Meet our specialists in Obstetrics and Gynecology</p>
+    </header>
+
+    <section class="doctor-grid">
+        <div class="doctor-card">
+            <img src="icons/doctor16.png" alt="Dr. Patricia Walker">
+            <h3>Dr. Patricia Walker</h3>
+            <p>MBBS, MD</p>
+            <p>Senior OB/GYN</p>
+            <button>Know More</button>
+        </div>
+        <div class="doctor-card">
+            <img src="icons/doctor17.png" alt="Dr. Brian Anderson">
+            <h3>Dr. Brian Anderson</h3>
+            <p>MBBS, MD</p>
+            <p>OB/GYN Specialist</p>
+            <button>Know More</button>
+        </div>
+        <div class="doctor-card">
+            <img src="icons/doctor18.png" alt="Dr. Nancy Lee">
+            <h3>Dr. Nancy Lee</h3>
+            <p>MBBS, MD</p>
+            <p>Consultant OB/GYN</p>
+            <button>Know More</button>
+        </div>
+    </section>
+    <section class="doctor-grid" id="doctor-grid">
+        <!-- Doctor cards will be dynamically added here -->
+    </section>
+
+    <script>
+        window.onload = function() {
+            const specialty = 'endocrinology'; // Change this to the respective specialty
+            const doctors = JSON.parse(localStorage.getItem(specialty)) || [];
+            const doctorGrid = document.getElementById('doctor-grid');
+
+            doctors.forEach(doctor => {
+                const doctorCard = document.createElement('div');
+                doctorCard.classList.add('doctor-card');
+                doctorCard.innerHTML = `
+                    <img src="${doctor.img}" alt="${doctor.name}">
+                    <h3>${doctor.name}</h3>
+                    <p>${doctor.qualifications}</p>
+                    <p>${doctor.position}</p>
+                    <button>Know More</button>
+                `;
+                doctorGrid.appendChild(doctorCard);
+            });
+        };
+    </script>
+
+    <script src="script.js"></script>
+</body>
+</html>

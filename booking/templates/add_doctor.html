@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add New Doctor</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="/static/css/styles.css">
+</head>
+<body>
+    <header>
+        <h1>Add New Doctor</h1>
+    </header>
+    <form id="doctor-form" method="POST" action="/add_doctor">
+        <input type="text" id="doctor-name" placeholder="Doctor's Name" required>
+        <input type="text" id="doctor-qualifications" placeholder="Qualifications" required>
+        <input type="text" id="doctor-position" placeholder="Position" required>
+        <input type="text" id="doctor-img" placeholder="Image Source (URL)" >
+        <select id="doctor-specialty" required>
+            <option value="">Select Specialty</option>
+            <option value="anesthesiology">Anesthesiology</option>
+            <option value="cardiology">Cardiology</option>
+            <option value="dermatology">Dermatology</option>
+            <option value="emergency-medicine">Emergency Medicine</option>
+            <option value="endocrinology">Endocrinology</option>
+            <option value="gastroenterology">Gastroenterology</option>
+            <option value="gynecology">Gynecology</option>
+            <option value="neurology">Neurology</option>
+            <option value="oncology">Oncology</option>
+            <option value="orthopedics">Orthopedics</option>
+            <option value="pediatrics">Pediatrics</option>
+            <option value="psychiatry">Psychiatry</option>
+            <option value="radiology">Radiology</option>
+            <option value="surgery">Surgery</option>
+            <option value="urology">Urology</option>
+            <option value="rheumatology">Rheumatology</option>
+            <option value="nephrology">Nephrology</option>
+            <option value="pulmonology">Pulmonology</option>
+            <option value="infectious-diseases">Infectious Diseases</option>
+            <option value="geriatrics">Geriatrics</option>
+            <option value="sports-medicine">Sports Medicine</option>
+            <option value="pain-medicine">Pain Medicine</option>
+            <option value="family-medicine">Family Medicine</option>
+            <option value="general-surgery">General Surgery</option>
+            <option value="medical-genetics">Medical Genetics</option>
+            <option value="occupational-medicine">Occupational Medicine</option>
+            <option value="pathology">Pathology</option>
+            <option value="sleep-medicine">Sleep Medicine</option>
+            <option value="preventive-medicine">Preventive Medicine</option>
+            <option value="addiction-medicine">Addiction Medicine</option>
+            <option value="adolescent-medicine">Adolescent Medicine</option>
+            <option value="palliative-care">Palliative Care</option>
+            <option value="interventional-radiology">Interventional Radiology</option>
+            <option value="cardiac-electrophysiology">Cardiac Electrophysiology</option>
+            <option value="pediatric-cardiology">Pediatric Cardiology</option>
+            <option value="maternal-fetal-medicine">Maternal-Fetal Medicine</option>
+            <option value="endovascular-surgery">Endovascular Surgery</option>
+            <option value="surgical-oncology">Surgical Oncology</option>
+            <option value="dermatopathology">Dermatopathology</option>
+            <option value="clinical-immunology">Clinical Immunology</option>
+            <option value="transplant-surgery">Transplant Surgery</option>
+            <option value="pediatric-surgery">Pediatric Surgery</option>
+            <option value="bariatric-surgery">Bariatric Surgery</option>
+            <option value="clinical-psychology">Clinical Psychology</option>
+            <option value="nutrition">Nutrition</option>
+            <option value="speech-therapy">Speech Therapy</option>
+        </select>
+        <button type="submit">Add Doctor</button>
+    </form>
+
+    <script>
+        function handleFormSubmit(event) {
+            event.preventDefault(); // Prevent the default form submission
+    
+            // Get input values
+            const name = document.getElementById('doctor-name').value;
+            const qualifications = document.getElementById('doctor-qualifications').value;
+            const position = document.getElementById('doctor-position').value;
+            const imgSrc = document.getElementById('doctor-img').value;
+            const specialty = document.getElementById('doctor-specialty').value;
+
+            // Create the doctor object
+            const doctor = {
+                name,
+                qualifications,
+                position,
+                imgSrc
+            };
+
+            // Save the doctor's information to localStorage
+            let doctors = JSON.parse(localStorage.getItem(specialty)) || [];
+            doctors.push(doctor);
+            localStorage.setItem(specialty, JSON.stringify(doctors));
+
+            // Clear the form
+            document.getElementById('doctor-form').reset();
+
+            // Optionally: Alert user that the doctor has been added
+            alert("Doctor added successfully!");
+        }
+    </script>
+</body>
+</html>
